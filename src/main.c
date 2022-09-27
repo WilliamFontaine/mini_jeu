@@ -21,8 +21,9 @@ void init_party(Player players[], int nbPlayer){
 }
 
 void play_party(Player players[],int nbPlayer){
-  int index = 0, action;
+  int index = 0;
   int alive_player = nbPlayer;
+  Action action;
 
   printf("\n");
   printf("Debut du jeu:\n");

@@ -76,6 +76,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="C:/Users/William/Desktop/GitHub/mini_jeu/src/action.h">
+			<Option target="coursC"/>
+		</Unit>
 		<Unit filename="C:/Users/William/Desktop/GitHub/mini_jeu/src/game.c">
 			<Option target="coursC"/>
 		</Unit>

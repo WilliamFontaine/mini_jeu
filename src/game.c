@@ -5,6 +5,7 @@
 
 #include "game.h"
 #include "player.h"
+#include "action.h"
 
 void setPlayerName(Player *player) {
   printf("Quel est votre nom ?");
@@ -93,14 +94,17 @@ void display_players(Player players[], int nbPlayers){
 }
 
 int what_action() {
-  int action;
+  Action action;
   do{
     printf("Voulez-vous attaquer un autre joueur ou vous soigner ?\n");
     printf("\t- 1: attaquer\n");
     printf("\t- 2: se soigner\n");
     scanf("%d", &action);
   } while (action < 1 || action > 2);
-  return action;
+  if(action == 1)
+    return ATTACK;
+  else
+    return HEAL;
 }
 
 int ask_who_attack(Player players[], int index_player, int nbPlayer){
@@ -131,12 +135,12 @@ void heal(int index_player, Player player[]){
   player[index_player].life += player[index_player].defense / 2;
 }
 
-void perform_action(int action, int index_current_player, Player players[], int nbPlayer) {
+void perform_action(Action action, int index_current_player, Player players[], int nbPlayer) {
   switch (action) {
-  case 1:
+  case ATTACK:
     attack(index_current_player, players, nbPlayer);
     break;
-  case 2:
+  case HEAL:
     heal(index_current_player, players);
     break;
   default:
