@@ -121,7 +121,10 @@ int ask_who_attack(Player players[], int index_player, int nbPlayer){
 
 void attack(int index_player, Player players[], int nbPlayer){
   int index_attacked = ask_who_attack(players, index_player, nbPlayer);
-  players[index_attacked].life -= players[index_player].attack - (players[index_attacked].defense / 2);
+  if(players[index_player].attack - (players[index_attacked].defense / 2) < 0)
+    players[index_attacked].life += players[index_player].attack - (players[index_attacked].defense / 2);
+  else
+    players[index_attacked].life -= players[index_player].attack - (players[index_attacked].defense / 2);
 }
 
 void heal(int index_player, Player player[]){
