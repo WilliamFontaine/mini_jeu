@@ -12,5 +12,5 @@ CTestTestfile.cmake
 _deps
 
 # IDE
-.idea/**
-.vscode/**
+.idea
+.vscode
